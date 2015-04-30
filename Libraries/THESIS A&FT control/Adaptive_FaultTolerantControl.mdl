@@ -1,0 +1,2539 @@
+Library {
+  Name			  "Adaptive_FaultTolerantControl"
+  Version		  8.0
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [1358.0, -8.0, 1296.0, 1040.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[8]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1244.0, 872.0]
+	ZoomFactor		[0.6]
+	Offset			[92.2394012834618, 141.95256378879361]
+      }
+    }
+  }
+  Created		  "Fri Jun 06 17:33:20 2014"
+  Creator		  "David"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "David"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Aug 08 00:58:12 2014"
+  RTWModifiedTimeStamp	  329360287
+  ModelVersionFormat	  "1.%<AutoIncrement:34>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "disabled"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      6
+      Version		      "1.12.1"
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  7
+	  Version		  "1.12.1"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  8
+	  Version		  "1.12.1"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "Dataset"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  9
+	  Version		  "1.12.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  10
+	  Version		  "1.12.1"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "EnableAllAsError"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  11
+	  Version		  "1.12.1"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  12
+	  Version		  "1.12.1"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  13
+	  Version		  "1.12.1"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  14
+	  Version		  "1.12.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    15
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    Cell		    "CodeExecutionProfiling"
+	    Cell		    "CodeProfilingSaveOptions"
+	    Cell		    "CodeProfilingInstrumentation"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  GenerateErtSFunction	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      15
+	      Version		      "1.12.1"
+	      Array {
+		Type			"Cell"
+		Dimension		22
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InternalIdentifier"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Classic"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      16
+	      Version		      "1.12.1"
+	      Array {
+		Type			"Cell"
+		Dimension		15
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      CodeReplacementLibrary  "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      GRTInterface	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	hdlcoderui.hdlcc {
+	  $ObjectID		  17
+	  Version		  "1.12.1"
+	  Description		  "HDL Coder custom configuration component"
+	  Name			  "HDL Coder"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    ""
+	    PropName		    "HDLConfigFile"
+	  }
+	  HDLCActiveTab		  "0"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 243, 69, 1123, 699 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      IgnoreLimit	      off
+      ZeroCross		      on
+      ContinuousStateAttributes	"''"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+  }
+  System {
+    Name		    "Adaptive_FaultTolerantControl"
+    Location		    [1358, -8, 2654, 1032]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "60"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "80"
+    Block {
+      BlockType		      Reference
+      Name		      "Control allocator Completed "
+      SID		      "28"
+      Ports		      [10, 3]
+      Position		      [55, 20, 455, 395]
+      ZOrder		      4
+      LibraryVersion	      "1.97"
+      SourceBlock	      "qcatlib/Control allocator Completed\n"
+      SourceType	      "Control allocator Completed"
+      alg		      "WLS"
+      CA_type		      "DYN"
+      iter_max		      "100"
+      gamma		      "1e6"
+      k_B		      "3"
+      m_B		      "7"
+      T			      "0.01"
+      tol		      "0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PI Controller"
+      SID		      "29"
+      Ports		      [3, 1]
+      Position		      [70, 866, 410, 1174]
+      ZOrder		      5
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		18
+	$ClassName		"Simulink.Mask"
+	Type			"PI Controller"
+	Description		"Author David Torres\nThis bock generates a desired rate for an error inputa y_c-y_meas\n\nI also includ"
+	"e antiwind up and feedforward signal"
+	Initialization		"val = get_param(gcb,'MaskValues');\n% Controller design\nswitch lower(val{4})\n    case 'auto'\n    "
+	"    K_b=2*xi*omega_n;\n        f_i=1/(4*xi^2);\n        if f_i<0.25\n            f_c = 0.5*(1+sqrt(1-4*f_i));\n      "
+	"  else\n            f_c = sqrt(f_i);\n        end\n    case 'advanced'\n        K_b=2*xi*omega_n;\n        f_i=1/(4*x"
+	"i^2);\n        f_c =  -omega_n/(2*xi*Z1);  \n    case 'pro'\nend"
+	Display			"if delta==0\n    TF = tf(K_b*[f_c f_i*K_b],[1 K_b f_i*K_b^2]);\nelse\n    s=tf('s');\n    TF = 1/(s+delta)"
+	"*K_b*(f_c*s+f_i*K_b)/(s*( 1+1/(s+delta)*K_b ) + 1/(s+delta)*f_i*K_b^2 );\nend\n\n[y,t]=step(TF);\nS = stepinfo(y,t);\n"
+	"\npos = get_param(gcb, 'Position');\nwidth = pos(3) - pos(1);\nheight = pos(4) - pos(2);\nt = t.*width/max(t);\ny=y.*"
+	"height/max(y);\nplot(t,y);\n\nS2 = stepinfo(y,t);\nif S2.PeakTime<0.5*width\n    Peaktime = S2.PeakTime;\nelse\n    P"
+	"eaktime = 0.25*width;\nend\ntext(Peaktime ,S2.Peak*0.85,['Peak time = ',num2str(S.PeakTime),'s' ]);\ntext(Peaktime ,S"
+	"2.Peak*0.75,['Os = ',num2str(S.Peak)]);\ntext(Peaktime ,S2.Peak*0.75,['Os = ',num2str(S.Peak)]);\ntext(Peaktime ,S2.P"
+	"eak*0.65,['SettlingTime = ',num2str(S.SettlingTime)]);\n\ntext(0.05*width,0.1*height,['EXPECTED CLOSED-LOOP RESPONSE:"
+	" INTEGRATION DELAY ',num2str(delta),'s ']);\n\n[num,den] = tfdata(TF);\ndpoly(num{:},den{:}, 's');"
+	IconOpaque		"off"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  10
+	  Object {
+	    $ObjectID		    19
+	    Type		    "edit"
+	    Name		    "delta"
+	    Prompt		    "Integrator delay"
+	    Value		    "0"
+	  }
+	  Object {
+	    $ObjectID		    20
+	    Type		    "edit"
+	    Name		    "K_a"
+	    Prompt		    "Anti-windup gain"
+	    Value		    "0"
+	  }
+	  Object {
+	    $ObjectID		    21
+	    Type		    "edit"
+	    Name		    "y_i"
+	    Prompt		    "Initial state"
+	    Value		    "0"
+	  }
+	  Object {
+	    $ObjectID		    22
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "auto"
+	      Cell		      "advanced"
+	      Cell		      "pro"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "Des_way"
+	    Prompt		    "Expected response: Controller Design process"
+	    Value		    "auto"
+	    Callback		    "val = get_param(gcb,'MaskValues');\nswitch lower(val{4})\n    case 'auto'\n        set_param(gcb,'"
+	    "MaskVisibilities',{'on','on','on','on','on','on','off','off','off','off'});\n    case 'advanced'\n        set_par"
+	    "am(gcb,'MaskVisibilities',{'on','on','on','on','on','on','on','off','off','off'});\n    case 'pro'\n        set_p"
+	    "aram(gcb,'MaskVisibilities',{'on','on','on','on','off','off','off','on','on','on'});\n end"
+	  }
+	  Object {
+	    $ObjectID		    23
+	    Type		    "edit"
+	    Name		    "omega_n"
+	    Prompt		    "Desired 2nd order response omega_n"
+	    Value		    "10"
+	  }
+	  Object {
+	    $ObjectID		    24
+	    Type		    "edit"
+	    Name		    "xi"
+	    Prompt		    "Desired 2nd order response  xi"
+	    Value		    "0.9"
+	  }
+	  Object {
+	    $ObjectID		    25
+	    Type		    "edit"
+	    Name		    "Z1"
+	    Prompt		    "Zero of controller"
+	    Value		    "0"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    26
+	    Type		    "edit"
+	    Name		    "K_b"
+	    Prompt		    "K_b proportional term"
+	    Value		    "12"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    27
+	    Type		    "edit"
+	    Name		    "f_i"
+	    Prompt		    "f_i integral term"
+	    Value		    "0.25"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    28
+	    Type		    "edit"
+	    Name		    "f_c"
+	    Prompt		    "f_c fedfordward term (1 recomended)"
+	    Value		    "1"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"PI Controller"
+	Location		[1358, -8, 2654, 1032]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "y_c"
+	  SID			  "30"
+	  Position		  [35, 198, 65, 212]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "y_meas"
+	  SID			  "31"
+	  Position		  [35, 328, 65, 342]
+	  ZOrder		  6
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Anti-windup signal"
+	  SID			  "32"
+	  Position		  [35, 438, 65, 452]
+	  ZOrder		  12
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  " "
+	  SID			  "33"
+	  Ports			  [3, 1]
+	  Position		  [775, 175, 835, 235]
+	  ZOrder		  10
+	  IconShape		  "round"
+	  Inputs		  "++-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  " 1"
+	  SID			  "34"
+	  Ports			  [2, 1]
+	  Position		  [550, 175, 610, 235]
+	  ZOrder		  13
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Add"
+	  SID			  "35"
+	  Ports			  [2, 1]
+	  Position		  [245, 175, 305, 235]
+	  ZOrder		  1
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator"
+	  SID			  "36"
+	  Ports			  [1, 1]
+	  Position		  [695, 177, 745, 233]
+	  ZOrder		  3
+	  InitialCondition	  "y_i*(1-f_c)"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "K_a"
+	  SID			  "37"
+	  Position		  [385, 417, 475, 473]
+	  ZOrder		  14
+	  Gain			  "K_a"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "K_b"
+	  SID			  "38"
+	  Position		  [875, 177, 965, 233]
+	  ZOrder		  9
+	  Gain			  "K_b"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "f_c"
+	  SID			  "39"
+	  Position		  [465, 17, 555, 73]
+	  ZOrder		  11
+	  Gain			  "f_c"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "f_i*K_b"
+	  SID			  "40"
+	  Position		  [370, 177, 485, 233]
+	  ZOrder		  2
+	  Gain			  "f_i*K_b"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y_des_dot"
+	  SID			  "41"
+	  Position		  [1130, 198, 1160, 212]
+	  ZOrder		  4
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "f_i*K_b"
+	  SrcPort		  1
+	  DstBlock		  " 1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Add"
+	  SrcPort		  1
+	  DstBlock		  "f_i*K_b"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "K_b"
+	  SrcPort		  1
+	  DstBlock		  "y_des_dot"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "y_meas"
+	  SrcPort		  1
+	  Points		  [205, 0]
+	  Branch {
+	    DstBlock		    "Add"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 3; 530, 0]
+	    DstBlock		    " "
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "y_c"
+	  SrcPort		  1
+	  Points		  [80, 0]
+	  Branch {
+	    Points		    [0, -160]
+	    DstBlock		    "f_c"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Add"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integrator"
+	  SrcPort		  1
+	  DstBlock		  " "
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "f_c"
+	  SrcPort		  1
+	  Points		  [245, 0]
+	  DstBlock		  " "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " "
+	  SrcPort		  1
+	  DstBlock		  "K_b"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Anti-windup signal"
+	  SrcPort		  1
+	  DstBlock		  "K_a"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " 1"
+	  SrcPort		  1
+	  DstBlock		  "Integrator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "K_a"
+	  SrcPort		  1
+	  Points		  [100, 0]
+	  DstBlock		  " 1"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ref Model and P Controller"
+      SID		      "48"
+      Ports		      [2, 5]
+      Position		      [600, 462, 980, 778]
+      ZOrder		      6
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		29
+	$ClassName		"Simulink.Mask"
+	Type			"Reference Model and Controller"
+	Description		"Author: David Torres    \n\nThis block allows a design of the desired dynamics as a 1st order system an"
+	"d the controller of it with P and I actions, with feedforward in rate and anti-windup action.\n\n    Inputs: Signal r"
+	"eference, Signal measurement and anti-windup dignal.\n    Outputs: Desired Signal rate\n\nThe block shows the expecte"
+	"d dynamics assuming the output is integrated with a PERFECT INTEGRATOR or an INTEGRATOR WITH DELAY(delta):\n     NDI,"
+	" CA and plant act as a perfect integrator or integrator with a delay delta."
+	Display			"K_ref=1/tau;	\nTF = tf([K_ref],[1 K_ref]);\n\n[y,t]=step(TF);\nS = stepinfo(y,t);\n\npos = get_param(gcb, "
+	"'Position');\nwidth = pos(3) - pos(1);\nheight = pos(4) - pos(2);\nt = t.*width/max(t);\ny=y.*height/max(y);\nplot(t,"
+	"y);\nS2 = stepinfo(y,t);\n\nif S.Overshoot==0 % 1st order response\n    text(S2.RiseTime ,height*0.85,['Rise time = '"
+	",num2str(S.RiseTime),'s' ]);\n    text(S2.RiseTime ,height*0.75,['Settling Time = ',num2str(S.SettlingTime)]);\n     "
+	"  \nelseif S.Overshoot<0.05 % 2nd order response\n    text(width*0.5 ,height*0.9,['Rise time = ',num2str(S.RiseTime),"
+	"'s' ]);\n    text(width*0.5 ,height*0.8,['Pike time = ',num2str(S.PeakTime),'s' ]);\n    text(width*0.5 ,height*0.7,["
+	"'Os = ',num2str(S.Peak)]);\n    text(width*0.5 ,height*0.6,['SettlingTime = ',num2str(S.SettlingTime)]);\nelse % 2nd "
+	"order response\n    text(S2.PeakTime ,S2.Peak*0.85,['Peak time = ',num2str(S.PeakTime),'s' ]);\n    text(S2.PeakTime "
+	",S2.Peak*0.75,['Os = ',num2str(S.Peak)]);\n    text(S2.PeakTime ,S2.Peak*0.65,['SettlingTime = ',num2str(S.SettlingTi"
+	"me)]);\nend\n\n\n[num,den] = tfdata(TF);\ndpoly(num{:},den{:}, 's');\n"
+	IconOpaque		"off"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  4
+	  Object {
+	    $ObjectID		    30
+	    Type		    "promote"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "Reference Model/tau"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "tau"
+	    Prompt		    "Desired time constant tau"
+	    Value		    "0.2"
+	    TabName		    "Reference model desing"
+	  }
+	  Object {
+	    $ObjectID		    31
+	    Type		    "promote"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "Reference Model/y_i"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "y_i"
+	    Prompt		    "Initial state"
+	    Value		    "0"
+	    TabName		    "Reference model desing"
+	  }
+	  Object {
+	    $ObjectID		    32
+	    Type		    "promote"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "K_f/Gain"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "K_f"
+	    Prompt		    "Rate Feedfordward Gain K_f"
+	    Value		    "1"
+	    TabName		    "Controller design"
+	  }
+	  Object {
+	    $ObjectID		    33
+	    Type		    "promote"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "K_b params/Value"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "K_b"
+	    Prompt		    "Proportional Gain K_b"
+	    Value		    "1"
+	    TabName		    "Controller design"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Ref Model and P Controller"
+	Location		[1358, -8, 2654, 1032]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"80"
+	Block {
+	  BlockType		  Inport
+	  Name			  "y_ref"
+	  SID			  "49"
+	  Position		  [10, 173, 40, 187]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "y_meas"
+	  SID			  "50"
+	  Position		  [510, 433, 540, 447]
+	  ZOrder		  3
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  " "
+	  SID			  "58"
+	  Ports			  [2, 1]
+	  Position		  [855, 325, 915, 385]
+	  ZOrder		  16
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Add1"
+	  SID			  "52"
+	  Ports			  [2, 1]
+	  Position		  [1170, 340, 1230, 400]
+	  ZOrder		  9
+	  IconShape		  "round"
+	  Inputs		  "++|"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Divide"
+	  SID			  "80"
+	  Ports			  [2, 1]
+	  Position		  [1035, 342, 1085, 393]
+	  ZOrder		  19
+	  Inputs		  "**"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "K_b params"
+	  SID			  "78"
+	  Position		  [865, 497, 935, 543]
+	  ZOrder		  17
+	  Value			  "K_b"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "K_f"
+	  SID			  "53"
+	  Position		  [810, 87, 900, 143]
+	  ZOrder		  10
+	  Gain			  "K_f"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Reference Model"
+	  SID			  "67"
+	  Ports			  [1, 2]
+	  Position		  [175, 52, 480, 303]
+	  ZOrder		  1
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    34
+	    $ClassName		    "Simulink.Mask"
+	    Initialization	    "K_ref=1/tau;"
+	    Display		    "[y,t]=step(tf([K_ref],[1 K_ref]));\npos = get_param(gcb, 'Position');\nwidth = pos(3) - pos(1);\nhe"
+	    "ight = pos(4) - pos(2);\nt = t.*width/max(t);\ny=y.*height/max(y);\nplot(t,y);\n\n\ntext(0.5*width,0.92*height,['"
+	    "tau=',num2str(tau)]);\n\ndpoly([K_ref],[1 K_ref], 's')"
+	    IconOpaque		    "off"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      2
+	      Object {
+		$ObjectID		35
+		Type			"edit"
+		Name			"tau"
+		Prompt			"1st order time constant (tau)"
+		Value			"tau"
+	      }
+	      Object {
+		$ObjectID		36
+		Type			"edit"
+		Name			"y_i"
+		Prompt			"Initial state"
+		Value			"y_i"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "Reference Model"
+	    Location		    [1358, -8, 2654, 1032]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "y_ref"
+	      SID		      "68"
+	      Position		      [110, 103, 140, 117]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Add"
+	      SID		      "69"
+	      Ports		      [2, 1]
+	      Position		      [245, 80, 305, 140]
+	      ZOrder		      1
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Integrator"
+	      SID		      "70"
+	      Ports		      [1, 1]
+	      Position		      [585, 95, 615, 125]
+	      ZOrder		      3
+	      InitialCondition	      "y_i"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "K_ref"
+	      SID		      "71"
+	      Position		      [405, 82, 495, 138]
+	      ZOrder		      2
+	      Gain		      "K_ref"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "y_c_dot"
+	      SID		      "72"
+	      Position		      [825, 3, 855, 17]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "y_c"
+	      SID		      "73"
+	      Position		      [825, 103, 855, 117]
+	      ZOrder		      4
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Integrator"
+	      SrcPort		      1
+	      Points		      [49, 0]
+	      Branch {
+		Points			[0, 111; -394, 0]
+		DstBlock		"Add"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"y_c"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "K_ref"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      Branch {
+		Points			[0, -100]
+		DstBlock		"y_c_dot"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Integrator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Add"
+	      SrcPort		      1
+	      DstBlock		      "K_ref"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "y_ref"
+	      SrcPort		      1
+	      DstBlock		      "Add"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y_des_dot"
+	  SID			  "74"
+	  Position		  [1335, 363, 1365, 377]
+	  ZOrder		  -2
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y_c_ff_dot"
+	  SID			  "75"
+	  Position		  [1255, 108, 1285, 122]
+	  ZOrder		  12
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y_c"
+	  SID			  "76"
+	  Position		  [620, 208, 650, 222]
+	  ZOrder		  13
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y_meas_out"
+	  SID			  "77"
+	  Position		  [620, 373, 650, 387]
+	  ZOrder		  14
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "k_b param"
+	  SID			  "79"
+	  Position		  [1295, 513, 1325, 527]
+	  ZOrder		  18
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Divide"
+	  SrcPort		  1
+	  DstBlock		  "Add1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "K_f"
+	  SrcPort		  1
+	  Points		  [295, 0]
+	  Branch {
+	    DstBlock		    "Add1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "y_c_ff_dot"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Reference Model"
+	  SrcPort		  1
+	  DstBlock		  "K_f"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Add1"
+	  SrcPort		  1
+	  DstBlock		  "y_des_dot"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "y_ref"
+	  SrcPort		  1
+	  DstBlock		  "Reference Model"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " "
+	  SrcPort		  1
+	  DstBlock		  "Divide"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reference Model"
+	  SrcPort		  2
+	  Points		  [87, 0]
+	  Branch {
+	    Points		    [236, 0; 0, 115]
+	    DstBlock		    " "
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -25]
+	    DstBlock		    "y_c"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "y_meas"
+	  SrcPort		  1
+	  Points		  [41, 0]
+	  Branch {
+	    Points		    [299, 0]
+	    DstBlock		    " "
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -60]
+	    DstBlock		    "y_meas_out"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "K_b params"
+	  SrcPort		  1
+	  Points		  [29, 0]
+	  Branch {
+	    Points		    [0, -140]
+	    DstBlock		    "Divide"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "k_b param"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ref Model and PI Controller"
+      SID		      "1"
+      Ports		      [3, 4]
+      Position		      [40, 453, 465, 792]
+      ZOrder		      3
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		37
+	$ClassName		"Simulink.Mask"
+	Type			"Reference Model and Controller"
+	Description		"Author: David Torres    \n\nThis block allows a design of the desired dynamics as a 1st order system an"
+	"d the controller of it with P and I actions, with feedforward in rate and anti-windup action.\n\n    Inputs: Signal r"
+	"eference, Signal measurement and anti-windup dignal.\n    Outputs: Desired Signal rate\n\nThe block shows the expecte"
+	"d dynamics assuming the output is integrated with a PERFECT INTEGRATOR or an INTEGRATOR WITH DELAY(delta):\n     NDI,"
+	" CA and plant act as a perfect integrator or integrator with a delay delta."
+	Initialization		"val = get_param(gcb,'MaskValues');\nK_ref=1/tau;	\n% Controller design\nswitch lower(val{6})\n    ca"
+	"se 'auto'\n        K_b=2*xi*omega_n;\n        f_i=1/(4*xi^2);\n        if f_i<0.25\n            f_c = 0.5*(1+sqrt(1-4"
+	"*f_i));\n        else\n            f_c = sqrt(f_i);\n        end\n    case 'advanced'\n        K_b=2*xi*omega_n;\n   "
+	"     f_i=1/(4*xi^2);\n        f_c =  -omega_n/(2*xi*Z1);  \n    case 'pro'\nend"
+	Display			"RM = tf([K_ref],[1 K_ref]);\n\nif delta==0\n    TF_FF = tf([K_f K_b*f_c K_b*f_i*K_b],[1 K_b f_i*K_b^2]);\n"
+	"else\n    s=tf('s');\n    TF_FF = 1/(s+delta)*(K_f*s^2+K_b*(f_c*s+f_i*K_b))/(s + 1/(s+delta)*(K_b*s+f_i*K_b^2) );\nen"
+	"d\nTF = RM*TF_FF;\n\n[y,t]=step(TF);\nS = stepinfo(y,t);\n\npos = get_param(gcb, 'Position');\nwidth = pos(3) - pos(1"
+	");\nheight = pos(4) - pos(2);\nt = t.*width/max(t);\ny=y.*height/max(y);\nplot(t,y);\nS2 = stepinfo(y,t);\n\nif S.Ove"
+	"rshoot==0 % 1st order response\n    text(S2.RiseTime ,height*0.85,['Rise time = ',num2str(S.RiseTime),'s' ]);\n    te"
+	"xt(S2.RiseTime ,height*0.75,['Settling Time = ',num2str(S.SettlingTime)]);\n       \nelseif S.Overshoot<0.05 % 2nd or"
+	"der response\n    text(width*0.5 ,height*0.9,['Rise time = ',num2str(S.RiseTime),'s' ]);\n    text(width*0.5 ,height*"
+	"0.8,['Pike time = ',num2str(S.PeakTime),'s' ]);\n    text(width*0.5 ,height*0.7,['Os = ',num2str(S.Peak)]);\n    text"
+	"(width*0.5 ,height*0.6,['SettlingTime = ',num2str(S.SettlingTime)]);\nelse % 2nd order response\n    text(S2.PeakTime"
+	" ,S2.Peak*0.85,['Peak time = ',num2str(S.PeakTime),'s' ]);\n    text(S2.PeakTime ,S2.Peak*0.75,['Os = ',num2str(S.Pea"
+	"k)]);\n    text(S2.PeakTime ,S2.Peak*0.65,['SettlingTime = ',num2str(S.SettlingTime)]);\nend\n\ntext(0.1*width,0.1*he"
+	"ight,['EXPECTED CLOSED-LOOP RESPONSE: INTEGRATION DELAY OF ',num2str(delta),'s ']);\n\n[num,den] = tfdata(TF);\ndpoly"
+	"(num{:},den{:}, 's');\n"
+	IconOpaque		"off"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  12
+	  Object {
+	    $ObjectID		    38
+	    Type		    "promote"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "PI Controller/delta"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "delta"
+	    Prompt		    "Delay on assumed integration: delta (0 for ideal integration)"
+	    Value		    "0"
+	    TabName		    "Plant considered"
+	  }
+	  Object {
+	    $ObjectID		    39
+	    Type		    "promote"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "Reference Model/tau"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "tau"
+	    Prompt		    "Desired time constant tau"
+	    Value		    "0.5"
+	    TabName		    "Reference model desing"
+	  }
+	  Object {
+	    $ObjectID		    40
+	    Type		    "promote"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "Reference Model/y_i"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "y_i"
+	    Prompt		    "Initial state"
+	    Value		    "0"
+	    TabName		    "Reference model desing"
+	  }
+	  Object {
+	    $ObjectID		    41
+	    Type		    "promote"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "K_f/Gain"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "K_f"
+	    Prompt		    "Rate Feedfordward Gain"
+	    Value		    "1"
+	    TabName		    "Controller design"
+	  }
+	  Object {
+	    $ObjectID		    42
+	    Type		    "promote"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "PI Controller/K_a"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "K_a"
+	    Prompt		    "Anti-windup gain K_a"
+	    Value		    "1"
+	    TabName		    "Controller design"
+	  }
+	  Object {
+	    $ObjectID		    43
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "auto"
+	      Cell		      "advanced"
+	      Cell		      "pro"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "Con_way"
+	    Prompt		    "Expected response: Controller Design process"
+	    Value		    "auto"
+	    Callback		    "val = get_param(gcb,'MaskValues');\nswitch lower(val{6})\n case 'auto'\n     set_param(gcb,'MaskVi"
+	    "sibilities',{'on','on','on','on','on','on','on','on','off','off','off','off'});\n case 'advanced'\n     set_param"
+	    "(gcb,'MaskVisibilities',{'on','on','on','on','on','on','on','on','on','off','off','off'});\n case 'pro'\n     set"
+	    "_param(gcb,'MaskVisibilities',{'on','on','on','on','on','on','off','off','off','on','on','on'});\n end"
+	    TabName		    "Controller design"
+	  }
+	  Object {
+	    $ObjectID		    44
+	    Type		    "edit"
+	    Name		    "omega_n"
+	    Prompt		    "Desired 2nd order response omega_n"
+	    Value		    "4"
+	    TabName		    "Controller design"
+	  }
+	  Object {
+	    $ObjectID		    45
+	    Type		    "edit"
+	    Name		    "xi"
+	    Prompt		    "Desired 2nd order response  xi"
+	    Value		    "0.5"
+	    TabName		    "Controller design"
+	  }
+	  Object {
+	    $ObjectID		    46
+	    Type		    "edit"
+	    Name		    "Z1"
+	    Prompt		    "Zero of controller"
+	    Value		    "-30"
+	    Visible		    "off"
+	    TabName		    "Controller design"
+	  }
+	  Object {
+	    $ObjectID		    47
+	    Type		    "promote"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "PI Controller/K_b"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "K_b"
+	    Prompt		    "K_b"
+	    Value		    "2*0.8*3"
+	    Visible		    "off"
+	    TabName		    "Controller design"
+	  }
+	  Object {
+	    $ObjectID		    48
+	    Type		    "promote"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "PI Controller/f_i"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "f_i"
+	    Prompt		    "f_i"
+	    Value		    "0.25*1/0.8^2"
+	    Visible		    "off"
+	    TabName		    "Controller design"
+	  }
+	  Object {
+	    $ObjectID		    49
+	    Type		    "promote"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "PI Controller/f_c"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "f_c"
+	    Prompt		    "f_c"
+	    Value		    "1"
+	    Visible		    "off"
+	    TabName		    "Controller design"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Ref Model and PI Controller"
+	Location		[1358, -8, 2654, 1032]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"150"
+	Block {
+	  BlockType		  Inport
+	  Name			  "y_ref"
+	  SID			  "2"
+	  Position		  [10, 173, 40, 187]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "y_meas"
+	  SID			  "3"
+	  Position		  [520, 348, 550, 362]
+	  ZOrder		  3
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Anti-windup signal"
+	  SID			  "4"
+	  Position		  [540, 463, 570, 477]
+	  ZOrder		  11
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Add1"
+	  SID			  "5"
+	  Ports			  [2, 1]
+	  Position		  [1130, 325, 1190, 385]
+	  ZOrder		  9
+	  IconShape		  "round"
+	  Inputs		  "++|"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "K_f"
+	  SID			  "19"
+	  Position		  [810, 87, 900, 143]
+	  ZOrder		  10
+	  Gain			  "K_f"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PI Controller"
+	  SID			  "6"
+	  Ports			  [3, 1]
+	  Position		  [680, 184, 1075, 526]
+	  ZOrder		  2
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    50
+	    $ClassName		    "Simulink.Mask"
+	    Display		    "if delta==0\n    TF = tf(K_b*[f_c f_i*K_b],[1 K_b f_i*K_b^2]);\nelse\n    s=tf('s');\n    TF = 1/(s"
+	    "+delta)*K_b*(f_c*s+f_i*K_b)/(s*( 1+1/(s+delta)*K_b ) + 1/(s+delta)*f_i*K_b^2 );\nend\n\n[y,t]=step(TF);\nS = step"
+	    "info(y,t);\n\npos = get_param(gcb, 'Position');\nwidth = pos(3) - pos(1);\nheight = pos(4) - pos(2);\nt = t.*widt"
+	    "h/max(t);\ny=y.*height/max(y);\nplot(t,y);\n\nS2 = stepinfo(y,t);\ntext(S2.PeakTime ,S2.Peak*0.85,['Peak time = '"
+	    ",num2str(S.PeakTime),'s' ]);\ntext(S2.PeakTime ,S2.Peak*0.75,['Os = ',num2str(S.Peak)]);\ntext(S2.PeakTime ,S2.Pe"
+	    "ak*0.75,['Os = ',num2str(S.Peak)]);\ntext(S2.PeakTime ,S2.Peak*0.65,['SettlingTime = ',num2str(S.SettlingTime)]);"
+	    "\n\ntext(0.1*width,0.1*height,['EXPECTED CLOSED-LOOP RESPONSE: INTEGRATION DELAY OF ',num2str(delta),'s ']);\n\n["
+	    "num,den] = tfdata(TF);\ndpoly(num{:},den{:}, 's');"
+	    IconOpaque		    "off"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      5
+	      Object {
+		$ObjectID		51
+		Type			"edit"
+		Name			"K_b"
+		Prompt			"K_b proportional term"
+		Value			"K_b"
+	      }
+	      Object {
+		$ObjectID		52
+		Type			"edit"
+		Name			"f_i"
+		Prompt			"f_i integral term"
+		Value			"f_i"
+	      }
+	      Object {
+		$ObjectID		53
+		Type			"edit"
+		Name			"f_c"
+		Prompt			"f_c fedfordward term"
+		Value			"f_c"
+	      }
+	      Object {
+		$ObjectID		54
+		Type			"edit"
+		Name			"K_a"
+		Prompt			"Anti-windup gain"
+		Value			"K_a"
+	      }
+	      Object {
+		$ObjectID		55
+		Type			"edit"
+		Name			"delta"
+		Prompt			"Integrator delay"
+		Value			"delta"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "PI Controller"
+	    Location		    [1358, -8, 2654, 1032]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "80"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "y_c"
+	      SID		      "7"
+	      Position		      [35, 198, 65, 212]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "y_meas"
+	      SID		      "8"
+	      Position		      [35, 308, 65, 322]
+	      ZOrder		      6
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Anti-windup signal"
+	      SID		      "9"
+	      Position		      [35, 438, 65, 452]
+	      ZOrder		      12
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      " "
+	      SID		      "10"
+	      Ports		      [3, 1]
+	      Position		      [775, 175, 835, 235]
+	      ZOrder		      10
+	      IconShape		      "round"
+	      Inputs		      "++-"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      " 1"
+	      SID		      "11"
+	      Ports		      [2, 1]
+	      Position		      [550, 175, 610, 235]
+	      ZOrder		      13
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Add"
+	      SID		      "12"
+	      Ports		      [2, 1]
+	      Position		      [245, 175, 305, 235]
+	      ZOrder		      1
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Integrator"
+	      SID		      "13"
+	      Ports		      [1, 1]
+	      Position		      [695, 177, 745, 233]
+	      ZOrder		      3
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "K_a"
+	      SID		      "14"
+	      Position		      [385, 417, 475, 473]
+	      ZOrder		      14
+	      Gain		      "K_a"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "K_b"
+	      SID		      "15"
+	      Position		      [875, 177, 965, 233]
+	      ZOrder		      9
+	      Gain		      "K_b"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "f_c"
+	      SID		      "17"
+	      Position		      [465, 17, 555, 73]
+	      ZOrder		      11
+	      Gain		      "f_c"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "f_i*K_b"
+	      SID		      "16"
+	      Position		      [370, 177, 485, 233]
+	      ZOrder		      2
+	      Gain		      "f_i*K_b"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "y_des_dot"
+	      SID		      "18"
+	      Position		      [1130, 198, 1160, 212]
+	      ZOrder		      4
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "f_i*K_b"
+	      SrcPort		      1
+	      DstBlock		      " 1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Add"
+	      SrcPort		      1
+	      DstBlock		      "f_i*K_b"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "K_b"
+	      SrcPort		      1
+	      DstBlock		      "y_des_dot"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "y_meas"
+	      SrcPort		      1
+	      Points		      [205, 0]
+	      Branch {
+		Points			[0, 23; 530, 0]
+		DstBlock		" "
+		DstPort			3
+	      }
+	      Branch {
+		DstBlock		"Add"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "y_c"
+	      SrcPort		      1
+	      Points		      [80, 0]
+	      Branch {
+		Points			[0, -160]
+		DstBlock		"f_c"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Add"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Integrator"
+	      SrcPort		      1
+	      DstBlock		      " "
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "f_c"
+	      SrcPort		      1
+	      Points		      [245, 0]
+	      DstBlock		      " "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " "
+	      SrcPort		      1
+	      DstBlock		      "K_b"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Anti-windup signal"
+	      SrcPort		      1
+	      DstBlock		      "K_a"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " 1"
+	      SrcPort		      1
+	      DstBlock		      "Integrator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "K_a"
+	      SrcPort		      1
+	      Points		      [100, 0]
+	      DstBlock		      " 1"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Reference Model"
+	  SID			  "20"
+	  Ports			  [1, 2]
+	  Position		  [175, 52, 480, 303]
+	  ZOrder		  1
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    56
+	    $ClassName		    "Simulink.Mask"
+	    Initialization	    "K_ref=1/tau;"
+	    Display		    "[y,t]=step(tf([K_ref],[1 K_ref]));\npos = get_param(gcb, 'Position');\nwidth = pos(3) - pos(1);\nhe"
+	    "ight = pos(4) - pos(2);\nt = t.*width/max(t);\ny=y.*height/max(y);\nplot(t,y);\n\n\ntext(0.5*width,0.92*height,['"
+	    "tau=',num2str(tau)]);\n\ndpoly([K_ref],[1 K_ref], 's')"
+	    IconOpaque		    "off"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      2
+	      Object {
+		$ObjectID		57
+		Type			"edit"
+		Name			"tau"
+		Prompt			"1st order time constant (tau)"
+		Value			"tau"
+	      }
+	      Object {
+		$ObjectID		58
+		Type			"edit"
+		Name			"y_i"
+		Prompt			"Initial state"
+		Value			"y_i"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "Reference Model"
+	    Location		    [1358, -8, 2654, 1032]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "y_ref"
+	      SID		      "21"
+	      Position		      [110, 103, 140, 117]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Add"
+	      SID		      "22"
+	      Ports		      [2, 1]
+	      Position		      [245, 80, 305, 140]
+	      ZOrder		      1
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Integrator"
+	      SID		      "23"
+	      Ports		      [1, 1]
+	      Position		      [585, 95, 615, 125]
+	      ZOrder		      3
+	      InitialCondition	      "y_i"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "K_ref"
+	      SID		      "24"
+	      Position		      [405, 82, 495, 138]
+	      ZOrder		      2
+	      Gain		      "K_ref"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "y_c_dot"
+	      SID		      "25"
+	      Position		      [825, 3, 855, 17]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "y_c"
+	      SID		      "26"
+	      Position		      [825, 103, 855, 117]
+	      ZOrder		      4
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "y_ref"
+	      SrcPort		      1
+	      DstBlock		      "Add"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Add"
+	      SrcPort		      1
+	      DstBlock		      "K_ref"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "K_ref"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      Branch {
+		DstBlock		"Integrator"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -100]
+		DstBlock		"y_c_dot"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Integrator"
+	      SrcPort		      1
+	      Points		      [49, 0]
+	      Branch {
+		DstBlock		"y_c"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 111; -394, 0]
+		DstBlock		"Add"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y_des_dot"
+	  SID			  "27"
+	  Position		  [1295, 348, 1325, 362]
+	  ZOrder		  -2
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y_c_ff_dot"
+	  SID			  "45"
+	  Position		  [1145, 48, 1175, 62]
+	  ZOrder		  12
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y_c"
+	  SID			  "46"
+	  Position		  [600, 193, 630, 207]
+	  ZOrder		  13
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y_meas_out"
+	  SID			  "47"
+	  Position		  [615, 298, 645, 312]
+	  ZOrder		  14
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "y_ref"
+	  SrcPort		  1
+	  DstBlock		  "Reference Model"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reference Model"
+	  SrcPort		  2
+	  Points		  [87, 0]
+	  Branch {
+	    Points		    [0, -40]
+	    DstBlock		    "y_c"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "PI Controller"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Add1"
+	  SrcPort		  1
+	  DstBlock		  "y_des_dot"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Reference Model"
+	  SrcPort		  1
+	  DstBlock		  "K_f"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "K_f"
+	  SrcPort		  1
+	  Points		  [179, 0]
+	  Branch {
+	    Points		    [0, -60]
+	    DstBlock		    "y_c_ff_dot"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [76, 0]
+	    DstBlock		    "Add1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "PI Controller"
+	  SrcPort		  1
+	  DstBlock		  "Add1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Anti-windup signal"
+	  SrcPort		  1
+	  DstBlock		  "PI Controller"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "y_meas"
+	  SrcPort		  1
+	  Points		  [31, 0]
+	  Branch {
+	    Points		    [0, -50]
+	    DstBlock		    "y_meas_out"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "PI Controller"
+	    DstPort		    2
+	  }
+	}
+      }
+    }
+  }
+}
