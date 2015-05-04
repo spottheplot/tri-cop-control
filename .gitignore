@@ -43,3 +43,8 @@
 
 # Simulink Code Generation
 slprj/
+*.dll
+*.asv
+*.mdl.*
+bin/*
+deps/*
