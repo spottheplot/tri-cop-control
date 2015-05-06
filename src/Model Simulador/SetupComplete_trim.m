@@ -18,7 +18,7 @@ Ix=0.103; % To be changed/measured/tuned
 Iy=0.147; % To be changed/measured/tuned
 Iz=0.237;   % To be changed/measured/tuned
 Ixz = -0.008; % To be changed/measured/tuned
-I_BAC_0= [ Ix,0,Ixz;0,Iy,0;Ixz,0,Iz];
+I_BAC_0= [ Ix,0,Ixz;0,Iy,0;Ixz,0,Iz];;
 
 %% Arms distances   
 %           1
@@ -54,16 +54,15 @@ I_tube = [1/2*M_tube*R_tube_eq^2,0,  0  ;...
 J_FA = I_prop(1,1) + m_prop*h^2  + m_FA*h_FA^2 + m_M*h_M^2;    
 
 %% Propeller/motor parameters
-% Go to ..\Small 3-copter\data\14x4.7 prop for finding the propeller data  and model fitting
 Tau_motors = 0.06; % Time  constant of the ESC+Motors  % To be changed/measured/tuned
 
 b=2; % num of blades of the props
-c=3/100; % meters mean chord of props
+c=3/100; % mean chord of props
 sigma=b*c/(pi*R);
-a=10.26;  % Mean C_l slope of sections of props <~2*pi % To be changed/measured/tuned
+a=2.1117;  % Mean C_l slope of sections of props <~2*pi % To be changed/measured/tuned
 theta_0=0.38397;   % Propeller pith % To be changed/measured/tuned
 theta_1=-0.2967;     % Usualy 0
-C_d0=0.001193;    % Drag coefficient of propellers % To be changed/measured/tuned
+C_d0=0.00209;    % Drag coefficient of propellers % To be changed/measured/tuned
 %% Aerodynamic coefficients.
 % They try to represents the aerodynamic influence of the vehicle moving
 % across the air.  They can be perfectly 0 in first aprox.
@@ -94,9 +93,8 @@ load('ABModelDimless.mat')
 % % % zlabel('V_i Dimless')
 
 %% Load the Torque-Throttle-Omega model of ESC+motor 
-Ref_volt=16;% Reference voltage
 
-load('TTO_map.mat')% To be changed/measured/tuned
+load('TTO_map.mat')% To be changed/measured/tuned 
 figure
 surf(Throtle_TTO,Torque_TTO,Omega_TTO)
 Torque_TTO_vec=Torque_TTO(:,1);
@@ -105,6 +103,16 @@ Throtle_TTO_vec=Throtle_TTO(1,:);
 
 %% Load the Throttle-Omega model of ESC+motor 
 load('TO_curve.mat')
+
+[fitresult, gof] = TO_hover_map(throtle, Omega);
+
+
+%% Hover point for trim
+load('TO_curve_raw.mat')
+Omega_hover=550;
+X=fminunc( @(X) (fitresult(X) -Omega_hover)^2,9 );
+
+Throttle_Hover=X(1)/16;
 
 
 
