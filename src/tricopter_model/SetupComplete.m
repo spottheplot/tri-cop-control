@@ -81,7 +81,7 @@ v_i0=sqrt( 1/3*m*g/(2*rho*pi*R^2)  ); % Induced velocity in hover
 
 %% Load the AB model of induced velocities. Propeller model
 
-load('ABModelDimless.mat')
+load('ABModelDimLess.mat')
 
 % % % [X,Y]=meshgrid(Vx_adim,Vz_adim);
 % % % surf(X,Y,v_i_adim');
