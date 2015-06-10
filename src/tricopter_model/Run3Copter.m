@@ -4,6 +4,7 @@ close all
 clc
 global throtle_1 throtle_23 eta_23
 addpath(genpath('Used Functions'))
+LoadLibraries
 T_sim=0.01;
 %% Load data
 SetupComplete;
