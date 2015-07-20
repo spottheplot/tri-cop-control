@@ -97,15 +97,11 @@ load('ABModelDimLess.mat')
 Ref_volt=16;% Reference voltage
 
 load('TTO_map.mat')% To be changed/measured/tuned
-figure
-surf(Throtle_TTO,Torque_TTO,Omega_TTO)
+% figure
+% surf(Throtle_TTO,Torque_TTO,Omega_TTO)
 Torque_TTO_vec=Torque_TTO(:,1);
 Throtle_TTO_vec=Throtle_TTO(1,:);
 
 
 %% Load the Throttle-Omega model of ESC+motor 
 load('TO_curve.mat')
-
-
-
-

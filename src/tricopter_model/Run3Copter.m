@@ -35,13 +35,13 @@ Omega_hover(2)=fitresult_TO(Ref_volt*Throttle_Hover);
 Omega_hover(3)=fitresult_TO(Ref_volt*Throttle_Hover);
 Initial_Omegas =Omega_hover;
 
-plot(throtle,Omega,'r*')
-hold on
-x= 2:0.1:20;
-plot(x,fitresult_TO(x))
-xlabel('Throtle');ylabel('omega')
-legend(' Data','Fitted')
-pause
+% plot(throtle,Omega,'r*')
+% hold on
+% x= 2:0.1:20;
+% plot(x,fitresult_TO(x))
+% xlabel('Throtle');ylabel('omega')
+% legend(' Data','Fitted')
+% pause
 close all
 clear x y z
 
@@ -63,23 +63,22 @@ for i=1:size(x,1)
         z(i,j)=fitresult_TTO(x(i,j),y(i,j));
     end
 end
-surf(x,y,z)
-grid
-
+% surf(x,y,z)
+% grid
 
 X=minimize( @(X) (fitresult_TTO(Ref_volt*Throttle_Hover,X) -Omega_hover(1))^2,0.154,[],[],[],[],0,1,[]);
 Torque_hover(1)=X;
-plot3(Ref_volt*Throttle_Hover,Torque_hover(1),Omega_hover(1),'r.','Markersize',20)
+% plot3(Ref_volt*Throttle_Hover,Torque_hover(1),Omega_hover(1),'r.','Markersize',20)
 X=minimize( @(X) (fitresult_TTO(Ref_volt*Throttle_Hover,X) -Omega_hover(2))^2,0.154,[],[],[],[],0,1,[]);
 Torque_hover(2)=X;
-plot3(Ref_volt*Throttle_Hover,Torque_hover(2),Omega_hover(2),'r.','Markersize',20)
+% plot3(Ref_volt*Throttle_Hover,Torque_hover(2),Omega_hover(2),'r.','Markersize',20)
 X=minimize( @(X) (fitresult_TTO(Ref_volt*Throttle_Hover,X) -Omega_hover(3))^2,0.154,[],[],[],[],0,1,[]);
 Torque_hover(3)=X;
-plot3(Ref_volt*Throttle_Hover,Torque_hover(2),Omega_hover(3),'r.','Markersize',20)
+% plot3(Ref_volt*Throttle_Hover,Torque_hover(2),Omega_hover(3),'r.','Markersize',20)
 
 Initial_Torques= Torque_hover;
 
-xlabel('Throtle');ylabel('Mom');ylabel('omega')
-legend(' Data','Fitted','Hover 1','Hover 2')
-pause
+% xlabel('Throtle');ylabel('Mom');ylabel('omega')
+% legend(' Data','Fitted','Hover 1','Hover 2')
+% pause
 close all
