@@ -10,6 +10,9 @@
  *
  *  >> mex -DUSCORE wlsc_alloc.c
  *
+ *  >> mex -DUSCORE wlsc_alloc.c -llapack -lblas 
+ * (What worked for me. BLAS and LAPACK libraries where not being included by default)
+ *
  * On a PC Windows platform, you need to explicitly specify a LAPACK
  * library file to link with. Use this command if you are using the
  * Lcc compiler that ships with MATLAB:
