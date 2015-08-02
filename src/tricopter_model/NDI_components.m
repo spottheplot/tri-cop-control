@@ -34,8 +34,8 @@ R_BtoArm23 = subs (Rx, ang, gamma) * subs(Ry, ang, eta); % Rotation matrix Body2
 % Calculate g(x,u) --> gx
 
 syms Kt Kq
-% Kt = 15; % Thrust = Kt * tau || TODO: NOT REAL VALUE UPDATE
-% Kq = 0.07; % Moment = Kq * tau || TODO: NOT REAL VALUE UPDATE
+% Kt = 25.9; % Thrust = Kt * tau || Previous used value: 15
+% Kq = 0.3; % Moment = Kq * tau || Previous used value: 0.07
 
 Tarm = [0 0 -Kt * tau].'; % Local arm thrust vector
 Marm = [0 0 -Kq * tau].'; % Local arm moment vector for CW blade rotation
@@ -170,8 +170,8 @@ I_BAC_init =...
 CG_init = [0         0   -0.0015];
 mass = 3.51;
 I_CG_init = I_BAC_init - mass * (CG_init * CG_init' * eye(3) - CG_init' * CG_init);
-Kt = 15;
-Kq = 0.07;
+Kt = 25.9;
+Kq = 0.3;
 %% 9DOF with massic update
 % gx_hat_9DOF = eval(gx_hat);
 %% 9DOF no masic update
@@ -184,12 +184,12 @@ Iyz = I_CG_init(2,3);
 cx = CG_init(1);
 cy = CG_init(2);
 cz = CG_init(3);
-gx_hat_9DOF_NMU = vpa(eval(gx_hat),3);
-fx_hat_9DOF_NMU = vpa(eval(fx), 3);
+% gx_hat_9DOF_NMU = vpa(eval(gx_hat),3);
+% fx_hat_9DOF_NMU = vpa(eval(fx), 3);
 
-t=cputime
-eval(gx_hat_9DOF_NMU)
-cputime-t
+% t=cputime
+% eval(gx_hat_9DOF_NMU)
+% cputime-t
 %% 4DOF with massic update
 %   TODO
 %% 4DOF no massic update
@@ -203,20 +203,20 @@ eta2 = 0;
 eta2_0 = 0;
 eta3 = 0;
 eta3_0 = 0;
-% Ixx = I_CG_init(1,1);
-% Iyy = I_CG_init(2,2);
-% Izz = I_CG_init(3,3);
-% Ixy = I_CG_init(1,2);
-% Ixz = I_CG_init(1,3);
-% Iyz = I_CG_init(2,3);
-% cx = CG_init(1);
-% cy = CG_init(2);
-% cz = CG_init(3);
-% gx_hat_4DOF_nomass = vpa(eval(gx_hat), 5);
-% fx_hat_4DOF_nomass = vpa(eval(fx), 5);
+Ixx = I_CG_init(1,1);
+Iyy = I_CG_init(2,2);
+Izz = I_CG_init(3,3);
+Ixy = I_CG_init(1,2);
+Ixz = I_CG_init(1,3);
+Iyz = I_CG_init(2,3);
+cx = CG_init(1);
+cy = CG_init(2);
+cz = CG_init(3);
+gx_hat_4DOF_nomass = vpa(eval(gx_hat), 5);
+fx_hat_4DOF_nomass = vpa(eval(fx), 5);
 
 % Select components for 4DOF - WPQR
 %   Input - tau1, gamma1, tau2, tau3
 %   Output- accZ, p_dot, q_dot, r_dot
-% gx_hat_4DOF_nomass = vpa(eval(gx_hat_4DOF_nomass([3,4,5,6],[1,2,4,7])),4);
-% fx_hat_4DOF_nomass = vpa(eval(fx_hat_4DOF_nomass([3,4,5,6])), 4);
+gx_hat_4DOF_nomass = vpa(eval(gx_hat_4DOF_nomass([3,4,5,6],[1,2,4,7])),4);
+fx_hat_4DOF_nomass = vpa(eval(fx_hat_4DOF_nomass([3,4,5,6])), 4);
