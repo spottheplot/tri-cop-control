@@ -24,9 +24,20 @@ Ry = [cos(ang), 0, -sin(ang);
         0,      1,    0;
       sin(ang), 0, cos(ang)];
   
+Rz = [cos(ang),  sin(ang), 0;
+      -sin(ang), cos(ang), 0;
+      0,         0,        1];
+% Body to Earth
+% syms phi theta psi
+% R_E2B = subs(Rx, ang, phi) * subs (Ry, ang, theta) * subs (Rz, ang, psi)
 % Body to arm matrixes Varm = R_B2Arm * Vbody
-R_BtoArm1 = subs (Ry, ang, gamma) * subs(Rx, ang, eta); % Rotation matrix Body2Arm1
-R_BtoArm23 = subs (Rx, ang, gamma) * subs(Ry, ang, eta); % Rotation matrix Body2Arm1
+% Euler Rate Body to earth
+% syms phi_dot theta_dot psi_dot
+% L_E2B = [phi_dot, 0, 0].' +...
+%          subs(Rx, ang, phi) * [0, theta_dot, 0].' +...
+%          subs(Rx, ang, phi) * subs (Ry, ang, theta) * [0, 0, psi_dot].';
+R_BtoArm1 = subs (Ry', ang, gamma) * subs(Rx', ang, eta); % Rotation matrix Body2Arm1
+R_BtoArm23 = subs (Rx', ang, gamma) * subs(Ry', ang, eta); % Rotation matrix Body2Arm1
 
 %% Tricopter Forces/Moments(x) 9DOF
 % To apply NDI to nonlinear systems
@@ -136,6 +147,7 @@ Mc = [1,	0,      0,      0,  0,  0;
       cy,	-cx,	0,      0,  0,  1];
 
 % Actual Eq of motion (Not needed for NDI)
+% TODO 
 % [Ud, Vd, Wd, Pd, Qd, Rd] = mass_matrix\(excitation_matrix + Mc * [Tbody_ext; Mbody_ext])
 % vpa(eval(mass_matrix\(excitation_matrix + Mc * [Tbody_ext; Mbody_ext])), 5);
   
