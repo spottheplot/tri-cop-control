@@ -28,16 +28,18 @@ Rz = [cos(ang),  sin(ang), 0;
       -sin(ang), cos(ang), 0;
       0,         0,        1];
 % Body to Earth
-% syms phi theta psi
-% R_E2B = subs(Rx, ang, phi) * subs (Ry, ang, theta) * subs (Rz, ang, psi)
-% Body to arm matrixes Varm = R_B2Arm * Vbody
-% Euler Rate Body to earth
+syms phi theta psi
+R_E2B = subs(Rx, ang, phi) * subs (Ry, ang, theta) * subs (Rz, ang, psi);
+
+% % Euler Rate Body to earth
 % syms phi_dot theta_dot psi_dot
 % L_E2B = [phi_dot, 0, 0].' +...
 %          subs(Rx, ang, phi) * [0, theta_dot, 0].' +...
 %          subs(Rx, ang, phi) * subs (Ry, ang, theta) * [0, 0, psi_dot].';
-R_BtoArm1 = subs (Ry', ang, gamma) * subs(Rx', ang, eta); % Rotation matrix Body2Arm1
-R_BtoArm23 = subs (Rx', ang, gamma) * subs(Ry', ang, eta); % Rotation matrix Body2Arm1
+
+% Body to arm matrixes Varm = R_B2Arm * Vbody
+R_BtoArm1 = subs (Ry, ang, gamma) * subs(Rx, ang, eta); % Rotation matrix Body2Arm1
+R_BtoArm23 = subs (Rx, ang, gamma) * subs(Ry, ang, eta); % Rotation matrix Body2Arm1
 
 %% Tricopter Forces/Moments(x) 9DOF
 % To apply NDI to nonlinear systems
@@ -45,8 +47,8 @@ R_BtoArm23 = subs (Rx', ang, gamma) * subs(Ry', ang, eta); % Rotation matrix Bod
 % Calculate g(x,u) --> gx
 
 syms Kt Kq
-% Kt = 25.9; % Thrust = Kt * tau || Previous used value: 15
-% Kq = 0.3; % Moment = Kq * tau || Previous used value: 0.07
+% Kt = 19.5; % Thrust = Kt * tau || Previous used value: 15
+% Kq = 0.26; % Moment = Kq * tau || Previous used value: 0.07
 
 Tarm = [0 0 -Kt * tau].'; % Local arm thrust vector
 Marm = [0 0 -Kq * tau].'; % Local arm moment vector for CW blade rotation
@@ -138,7 +140,8 @@ excitation_matrix= [Gx + mass*R*V - mass*Q*W + mass*cx*(Q^2+R^2) - mass*cy*P*Q -
                                                                     
 % *******************************************************
 
- % Applies "cost" for moving from CG to BAC
+ % Applies "cost" for moving forces applied on CG to BAC by generating the
+ % associated moment.Z
 Mc = [1,	0,      0,      0,  0,  0;
       0,	1,      0,      0,  0,  0;
       0,	0,      1,      0,  0,  0;
@@ -152,7 +155,9 @@ Mc = [1,	0,      0,      0,  0,  0;
 % vpa(eval(mass_matrix\(excitation_matrix + Mc * [Tbody_ext; Mbody_ext])), 5);
   
 %% NDI Components from Eqs of motion
+% TODO Mc probably is wrong and needs to be removed.
 fx = mass_matrix\(excitation_matrix + Mc * hx_u0);
+J_fx = jacobian(fx, [U,V,W,P,Q,R]);
 
 % g(x) = Bv*B
 Bv =  mass_matrix\Mc;
@@ -182,8 +187,8 @@ I_BAC_init =...
 CG_init = [0         0   -0.0015];
 mass = 3.51;
 I_CG_init = I_BAC_init - mass * (CG_init * CG_init' * eye(3) - CG_init' * CG_init);
-Kt = 25.9;
-Kq = 0.3;
+% Kt = 19.5;
+% Kq = 0.26;
 %% 9DOF with massic update
 % gx_hat_9DOF = eval(gx_hat);
 %% 9DOF no masic update
@@ -225,10 +230,119 @@ cx = CG_init(1);
 cy = CG_init(2);
 cz = CG_init(3);
 gx_hat_4DOF_nomass = vpa(eval(gx_hat), 5);
-fx_hat_4DOF_nomass = vpa(eval(fx), 5);
+fx_hat_4DOF_nomass = vpa(eval(fx), 5);% %% Attainable sets
+
+%% Trim Point
+% Trim_4DOF = [  0.59, -2.298*pi/180,        0,   0.5889,             0,      0,     0.5896,      0,     0];
+% Trim_9DOF = [0.6065,-0.7332*pi/180, -0.06865,   0.6061,-0.7466*pi/180,  0.427,     0.6061, 0.6022,0.4216];
+% 
+% % Position limits = Lineal
+% % Plim_9DOF = [0,-deg2rad(165),-deg2rad(90), 0,-deg2rad(165),-deg2rad(15), 0,-deg2rad(165),-deg2rad(90);...
+% %              1, deg2rad(165), deg2rad(15), 1, deg2rad(165), deg2rad(90), 1, deg2rad(165), deg2rad(15)]';
+% % Plim_4DOF = [0,-deg2rad(165),           0, 0,            0,           0, 0,            0,           0;...
+% %              1, deg2rad(160),           0, 1,            0,           0, 1,            0,           0]';
+% Plim_9DOF = [0,-deg2rad(10),-deg2rad(10), 0,-deg2rad(10),-deg2rad(10), 0,-deg2rad(10),-deg2rad(10);...
+%              0.1, deg2rad(10), deg2rad(10), 0.1, deg2rad(10), deg2rad(10), 0.1, deg2rad(10), deg2rad(10)]';
+% Plim_4DOF = [0,-deg2rad(10),           0, 0,            0,           0, 0,            0,           0;...
+%              0.1, deg2rad(10),           0, 0.1,            0,           0, 0.1,            0,           0]';
+% 
+%          
+% % Linearised B matrices
+% B_9DOF = double(vpa(eval(...
+%     subs(gx_hat, [tau1_0, eta1_0, gamma1_0, tau2_0, eta2_0, gamma2_0, tau3_0, eta3_0, gamma3_0], Trim_9DOF))...
+%                     , 5));
+%                 
+% B_4DOF = double(vpa(eval(...
+%     subs(gx_hat, [tau1_0, eta1_0, gamma1_0, tau2_0, eta2_0, gamma2_0, tau3_0, eta3_0, gamma3_0], Trim_4DOF))...
+%                     , 5));
+% 
+% % Call  vview function
+% B_9DOF_acc = double(B_9DOF([1,2,3],:));
+% B_4DOF_acc = double(B_4DOF([1,2,3],:));
+% att_9DOF_Forces = vview(B_9DOF_acc,Plim_9DOF);
+% att_4DOF_Forces = vview(B_4DOF_acc,Plim_4DOF);
+% 
+% B_9DOF_rate = double(B_9DOF([4,5,6],:));
+% B_4DOF_rate = double(B_4DOF([4,5,6],:));
+% att_9DOF_Mom = vview(B_9DOF_rate,Plim_9DOF);
+% att_4DOF_Mom = vview(B_4DOF_rate,Plim_4DOF);
+% % att_9DOF = vview(B_9DOF,Plim_9DOF,pinv(B_9DOF));
+% % att_4DOF = vview(B_4DOF,Plim_4DOF,pinv(B_4DOF));
+
 
 % Select components for 4DOF - WPQR
 %   Input - tau1, gamma1, tau2, tau3
 %   Output- accZ, p_dot, q_dot, r_dot
 gx_hat_4DOF_nomass = vpa(eval(gx_hat_4DOF_nomass([3,4,5,6],[1,2,4,7])),4);
 fx_hat_4DOF_nomass = vpa(eval(fx_hat_4DOF_nomass([3,4,5,6])), 4);
+
+%% Controlability analysis for 4DOF around hovering point
+% U = 0;
+% V = 0;
+% W = 0;
+% P = 0;
+% Q = 0;
+% R = 0;
+% % Trim input for 4 DOF [tau1, eta1, tau2, tau3] =
+% % [0.59,-2.298*pi/180,0.5889,0.5896]
+% gx_4DOF = vpa(eval(gx_hat_4DOF_nomass([1,2,3,4,5,6],[1,2,4,7])),4);
+% fx_4DOF = vpa(eval(J_fx), 4);
+% ctrb(fx_4DOF, gx_4DOF)
+
+%% Attainable sets
+% % Trim Point
+% Trim_4DOF = [  0.59, -2.298*pi/180,        0,   0.5889,             0,      0,     0.5896,      0,     0];
+% Trim_9DOF = [0.6065,-0.7332*pi/180, -0.06865,   0.6061,-0.7466*pi/180,  0.427,     0.6061, 0.6022,0.4216];
+% 
+% % Position limits = Lineal
+% % Plim_9DOF = [0,-deg2rad(165),-deg2rad(90), 0,-deg2rad(165),-deg2rad(15), 0,-deg2rad(165),-deg2rad(90);...
+% %              1, deg2rad(165), deg2rad(15), 1, deg2rad(165), deg2rad(90), 1, deg2rad(165), deg2rad(15)]';
+% % Plim_4DOF = [0,-deg2rad(165),           0, 0,            0,           0, 0,            0,           0;...
+% %              1, deg2rad(160),           0, 1,            0,           0, 1,            0,           0]';
+% Plim_9DOF = [0,-deg2rad(10),-deg2rad(10), 0,-deg2rad(10),-deg2rad(10), 0,-deg2rad(10),-deg2rad(10);...
+%              0.1, deg2rad(10), deg2rad(10), 0.1, deg2rad(10), deg2rad(10), 0.1, deg2rad(10), deg2rad(10)]';
+% Plim_4DOF = [0,-deg2rad(10),           0, 0,            0,           0, 0,            0,           0;...
+%              0.1, deg2rad(10),           0, 0.1,            0,           0, 0.1,            0,           0]';
+% 8
+%          
+% % Linearised B matrices
+% B_9DOF = double(vpa(eval(...
+%     subs(gx_hat, [tau1_0, eta1_0, gamma1_0, tau2_0, eta2_0, gamma2_0, tau3_0, eta3_0, gamma3_0], Trim_9DOF))...
+%                     , 5));
+%                 
+% B_4DOF = double(vpa(eval(...
+%     subs(gx_hat, [tau1_0, eta1_0, gamma1_0, tau2_0, eta2_0, gamma2_0, tau3_0, eta3_0, gamma3_0], Trim_4DOF))...
+%                     , 5));
+% 
+% % Call  vview function
+% B_9DOF_acc = double(B_9DOF([1,2,3],:));
+% B_4DOF_acc = double(B_4DOF([1,2,3],:));
+% att_9DOF_Forces = vview(B_9DOF_acc,Plim_9DOF);
+% att_4DOF_Forces = vview(B_4DOF_acc,Plim_4DOF);
+% 
+% B_9DOF_rate = double(B_9DOF([4,5,6],:));
+% B_4DOF_rate = double(B_4DOF([4,5,6],:));
+% att_9DOF_Mom = vview(B_9DOF_rate,Plim_9DOF);
+% att_4DOF_Mom = vview(B_4DOF_rate,Plim_4DOF);
+% % att_9DOF = vview(B_9DOF,Plim_9DOF,pinv(B_9DOF));
+% % att_4DOF = vview(B_4DOF,Plim_4DOF,pinv(B_4DOF));
+
+
+%% Outer loop NDI - Objective relate Xe_dot and Ye_dot with \phi and \theta
+% % Generate global function x_dot = f(x,u)
+% fgx =  mass_matrix\excitation_matrix + gx;
+% % Take part relative to translational motion
+% fgx_outer = fgx(1:3,:);
+% % Transform to earth axis 
+% % [X_dot Y_dot, Z_dot] = f_E(x,u,phi,theta,psi)
+% f_E = R_E2B.'* fgx_outer;
+% 
+% % Linearise using Taylor approx
+% % [X_dot V_dot](phi, theta) = f_E(x_0, u_0, att_0) + jac(f_E(x,u,att)) * (att - att_0)
+% Assume inner dynamics are instant seen from the outer loop
+% f_E = subs(f_E, [u,v,w,p,q,r], [u_0,v_0,w_0,p_0,q_0,r_0]);
+% f_E = subs(f_E,[tau1, eta1, gamma1, tau2, eta2, gamma2, tau3, eta3, gamma3], u0.');
+%
+% % Online linearisation
+% jac_E = jac(f_E, [phi, theta, psi])
+% 
