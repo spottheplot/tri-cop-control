@@ -74,7 +74,7 @@ Torque_hover(2)=X;
 % plot3(Ref_volt*Throttle_Hover,Torque_hover(2),Omega_hover(2),'r.','Markersize',20)
 X=minimize( @(X) (fitresult_TTO(Ref_volt*Throttle_Hover,X) -Omega_hover(3))^2,0.154,[],[],[],[],0,1,[]);
 Torque_hover(3)=X;
-% plot3(Ref_volt*Throttle_Hover,Torque_hover(2),Omega_hover(3),'r.','Markersize',20)
+% plot3(Ref_volt*Throttle_Hover,Torque_hovThe dynamics associated with the translational motion of the vehicle is considerably less nonlinear than the rotational loops. Therefore, in principle, less accurate inversions may be performed to control the corresponding variables, simplifying the design of this control loop. Theer(2),Omega_hover(3),'r.','Markersize',20)
 
 Initial_Torques= Torque_hover;
 
@@ -82,3 +82,10 @@ Initial_Torques= Torque_hover;
 % legend(' Data','Fitted','Hover 1','Hover 2')
 % pause
 close all
+
+%% Load NN weights
+% If there are no previous weights saved go to Setup_ANN.m
+load('NN_c_weights');
+
+%% Robustness tests (Comment or delete if not needed)
+sigmatest = abs(normrnd(1,0,3,4));
